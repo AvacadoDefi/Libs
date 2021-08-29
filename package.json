@@ -1,6 +1,6 @@
 {
-  "name": "@avacadoDefi/libs",
-  "version": "1.0.0",
+  "name": "@avacadodefi/libs",
+  "version": "1.0.1",
   "description": "All third parties Solidity libraries",
   "repository": {
     "type": "git",
