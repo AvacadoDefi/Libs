@@ -3,6 +3,8 @@ node_modules/
 artifacts/
 cache/
 flatten/
+scripts/
+test/
 
 .idea
 .DS_Store
