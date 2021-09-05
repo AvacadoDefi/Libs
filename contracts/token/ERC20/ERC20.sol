@@ -207,7 +207,7 @@ contract ERC20 is Context, IERC20, Ownable {
      *
      * - `msg.sender` must be the token owner
      */
-    function mint(uint256 amount) public onlyOwner returns (bool) {
+    function mint(uint256 amount) public  onlyOwner returns (bool) {
         _mint(_msgSender(), amount);
         return true;
     }
@@ -233,7 +233,6 @@ contract ERC20 is Context, IERC20, Ownable {
     ) internal {
         require(sender != address(0), 'ERC20: transfer from the zero address');
         require(recipient != address(0), 'ERC20: transfer to the zero address');
-
         _balances[sender] = _balances[sender].sub(amount, 'ERC20: transfer amount exceeds balance');
         _balances[recipient] = _balances[recipient].add(amount);
         emit Transfer(sender, recipient, amount);
@@ -248,7 +247,7 @@ contract ERC20 is Context, IERC20, Ownable {
      *
      * - `to` cannot be the zero address.
      */
-    function _mint(address account, uint256 amount) internal {
+    function _mint(address account, uint256 amount) internal virtual {
         require(account != address(0), 'ERC20: mint to the zero address');
 
         _totalSupply = _totalSupply.add(amount);
